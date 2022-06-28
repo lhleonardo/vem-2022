@@ -12,8 +12,8 @@ describe('ShowUserService', () => {
   });
   it('Deve mostrar os dados do usuário logado', async () => {
     const loggedUser = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123123',
     });
 

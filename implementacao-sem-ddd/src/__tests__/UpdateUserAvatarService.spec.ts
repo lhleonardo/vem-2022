@@ -15,8 +15,8 @@ describe('Update Avatar', () => {
   });
   it('Deve atualizar a foto de perfil', async () => {
     const user = await fakeRepository.create({
-      email: 'lhleonardo@hotmail.com',
-      name: 'Leonardo Braz',
+      email: 'secretuser@hotmail.com',
+      name: 'Some name',
       password: '123456',
     });
 
@@ -42,7 +42,7 @@ describe('Update Avatar', () => {
 
     const user = await fakeRepository.create({
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 

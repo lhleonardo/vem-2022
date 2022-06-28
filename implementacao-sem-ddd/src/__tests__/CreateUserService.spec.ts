@@ -24,7 +24,7 @@ describe('Create User', () => {
   it('Deve criar um novo usuário', async () => {
     const createdUser = await service.createUser({
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -34,7 +34,7 @@ describe('Create User', () => {
   it('Não deve permitir e-mail duplicado', async () => {
     const user: ICreateUserDTO = {
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     };
 

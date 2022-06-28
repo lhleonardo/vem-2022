@@ -26,18 +26,18 @@ describe('Forgot Password', () => {
     const sendMail = jest.spyOn(fakeMailProvider, 'sendMail');
     await fakeUserRepository.create({
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
-    await sendForgotPasswordEmail.execute({ email: 'lhleonardo@hotmail.com' });
+    await sendForgotPasswordEmail.execute({ email: 'secretuser@hotmail.com' });
 
     expect(sendMail).toHaveBeenCalled();
   });
 
   it('Não deve permitir recuperar senha de usuário não cadastrado', async () => {
     await expect(
-      sendForgotPasswordEmail.execute({ email: 'lhleonardo@hotmail.com' }),
+      sendForgotPasswordEmail.execute({ email: 'secretuser@hotmail.com' }),
     ).rejects.toBeInstanceOf(AppError);
   });
 
@@ -45,12 +45,12 @@ describe('Forgot Password', () => {
     const generateToken = jest.spyOn(fakeUserTokenRepository, 'generate');
 
     const user = await fakeUserRepository.create({
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       name: 'Some name',
       password: '123456',
     });
 
-    await sendForgotPasswordEmail.execute({ email: 'lhleonardo@hotmail.com' });
+    await sendForgotPasswordEmail.execute({ email: 'secretuser@hotmail.com' });
 
     expect(generateToken).toHaveBeenCalledWith(user.id);
   });

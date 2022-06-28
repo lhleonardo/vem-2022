@@ -34,12 +34,12 @@ describe('AuthenticationUser', () => {
   it('Deve autenticar um usuário', async () => {
     await createUser.createUser({
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
     const user = await authUser.login({
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -48,19 +48,19 @@ describe('AuthenticationUser', () => {
 
   it('Não deve se autenticar com usuário não cadastrado', async () => {
     await expect(
-      authUser.login({ email: 'lhleonardo@hotmail.com', password: '123456' }),
+      authUser.login({ email: 'secretuser@hotmail.com', password: '123456' }),
     ).rejects.toBeInstanceOf(AppError);
   });
   it('Não deve se autenticar com credenciais inválidas', async () => {
     await createUser.createUser({
       name: 'Some name',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
     await expect(
       authUser.login({
-        email: 'lhleonardo@hotmail.com',
+        email: 'secretuser@hotmail.com',
         password: '12345',
       }),
     ).rejects.toBeInstanceOf(AppError);

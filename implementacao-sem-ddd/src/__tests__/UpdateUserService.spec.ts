@@ -23,8 +23,8 @@ describe('Update User', () => {
   it('Não deve atualizar o perfil de um usuário inválido', async () => {
     await expect(
       updateUser.update('wrong-user-id', {
-        name: 'Leonardo Braz',
-        email: 'lhleonardo@hotmail.com',
+        name: 'Some name',
+        email: 'secretuser@hotmail.com',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
@@ -32,28 +32,28 @@ describe('Update User', () => {
   it('Deve atualizar o perfil', async () => {
     const createdUser = await userRepository.create({
       name: 'Some nameBraz',
-      email: 'lhleonardo@hotmail.com',
+      email: 'secretuser@hotmail.com',
       password: '123123',
     });
 
     await updateUser.update(createdUser.id, {
-      name: 'Leonardo Braz',
-      email: 'lhleonardo05@gmail.com',
+      name: 'Some name',
+      email: 'secretuser05@gmail.com',
       oldPassword: '123123',
       password: 'maracuja',
     });
 
     const updatedUser = await userRepository.findById(createdUser.id);
 
-    expect(updatedUser?.name).toBe('Leonardo Braz');
-    expect(updatedUser?.email).toBe('lhleonardo05@gmail.com');
+    expect(updatedUser?.name).toBe('Some name');
+    expect(updatedUser?.email).toBe('secretuser05@gmail.com');
     expect(updatedUser?.password).toBe('maracuja');
   });
 
   it('Deve alterar a senha somente confirmando a senha antiga', async () => {
     const createdUser = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -69,8 +69,8 @@ describe('Update User', () => {
 
   it('Não deve alterar a senha se não informar senha antiga', async () => {
     const createdUser = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -85,8 +85,8 @@ describe('Update User', () => {
 
   it('Não deve alterar a senha se não informar uma nova senha', async () => {
     const createdUser = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -107,14 +107,14 @@ describe('Update User', () => {
     });
 
     const user = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123123',
     });
 
     await expect(
       updateUser.update(user.id, {
-        name: 'Leonardo Braz',
+        name: 'Some name',
         email: 'julia@gmail.com',
       }),
     ).rejects.toBeInstanceOf(AppError);

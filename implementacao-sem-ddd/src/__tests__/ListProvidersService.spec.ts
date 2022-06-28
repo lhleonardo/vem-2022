@@ -19,8 +19,8 @@ describe('ListProviders', () => {
   });
   it('Deve listar todos os prestadores de serviço', async () => {
     const loggedUser = await userRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123123',
     });
     const provider1 = await userRepository.create({

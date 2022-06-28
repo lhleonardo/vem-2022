@@ -25,8 +25,8 @@ describe('Reset Password', () => {
   it('Deve redefinir a senha a partir de um token', async () => {
     const generateHash = jest.spyOn(fakeHashProvider, 'generateHash');
     const user = await fakeUserRepository.create({
-      name: 'Leonardo Braz',
-      email: 'lhleonardo@hotmail.com',
+      name: 'Some name',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 
@@ -62,8 +62,8 @@ describe('Reset Password', () => {
 
   it('Não deve redefinir senha com token expirado', async () => {
     const user = await fakeUserRepository.create({
-      name: 'Leonardo Henrique',
-      email: 'lhleonardo@hotmail.com',
+      name: 'secretuser Henrique',
+      email: 'secretuser@hotmail.com',
       password: '123456',
     });
 

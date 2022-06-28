@@ -1,9 +1,9 @@
 # app-sem-ddd
 
-Aplicação sem DDD do projeto [GoBarber](https://github.com/lhleonardo/gobarber-api).
+Aplicação sem DDD do projeto [GoBarber](https://github.com/secretuser/gobarber-api).
 
 Criado para o artigo de Estudos Avançados em Engenharia de Software.
 
 # Autor
 
-Leonardo Braz ([@lhleonardo](https://github.com/lhleonardo))
+secretuser Braz ([@secretuser](https://github.com/secretuser))

@@ -14,8 +14,8 @@ export default {
 
   defaults: {
     from: {
-      name: 'Leonardo | Equipe GoBarber',
-      email: 'admin@leonardobraz.xyz',
+      name: 'secretuser | Equipe GoBarber',
+      email: 'admin@secretuserbraz.xyz',
     },
   },
 } as MailDriver;
