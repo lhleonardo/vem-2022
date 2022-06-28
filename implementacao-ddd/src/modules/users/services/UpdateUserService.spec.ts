@@ -26,7 +26,7 @@ describe('Update User', () => {
 
   it('Deve atualizar o perfil', async () => {
     const createdUser = await userRepository.create({
-      name: 'Leonardo Henrique Braz',
+      name: 'Some nameBraz',
       email: 'lhleonardo@hotmail.com',
       password: '123123',
     });

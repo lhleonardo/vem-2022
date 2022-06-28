@@ -26,7 +26,7 @@ describe('AuthenticationUser', () => {
 
   it('Deve autenticar um usuário', async () => {
     await createUser.execute({
-      name: 'Leonardo Henrique de Braz',
+      name: 'Some name',
       email: 'lhleonardo@hotmail.com',
       password: '123456',
     });
@@ -46,7 +46,7 @@ describe('AuthenticationUser', () => {
   });
   it('Não deve se autenticar com credenciais inválidas', async () => {
     await createUser.execute({
-      name: 'Leonardo Henrique de Braz',
+      name: 'Some name',
       email: 'lhleonardo@hotmail.com',
       password: '123456',
     });

@@ -41,7 +41,7 @@ describe('Update Avatar', () => {
     const mockedMethod = jest.spyOn(fakeStorage, 'deleteFile');
 
     const user = await fakeRepository.create({
-      name: 'Leonardo Henrique de Braz',
+      name: 'Some name',
       email: 'lhleonardo@hotmail.com',
       password: '123456',
     });
