@@ -27,9 +27,3 @@ A relação das pastas e seus significados:
 ## Sistema
 
 Trata-se de um sistema para gerenciamento de barbearias, utilizando a stack de NodeJS, Typescript, PostgreSQL, TypeORM e várias outras ferramentas.
-
-## Autores
-* Leonardo Henrique de Braz <lhleonardo05@gmail.com>
-* Ricardo Terra <terra@ufla.br>
-
-

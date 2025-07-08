@@ -106,8 +106,3 @@ Caso queira gerar o código JS equivalente:
 
 ```bash
 yarn build
-```
-
-## Autor
- | [<img src="https://github.com/lhleonardo.png" width=115><br><sub>Leonardo Braz</sub>](https://github.com/lhleonardo) <br><sub>Aluno de Graduação</sub>|
-| :---: |
